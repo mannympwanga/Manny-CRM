@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+<div class="col-md-6 offset-md-4">
+  <div class="card" style="width: 18rem">
+    <div class="card-header text-lg-center text-bg-dark font-monospace">
+      <strong>{{ user_record.first_name}} {{ user_record.last_name }}</strong>
+    </div>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">Created At</li>
+      <li class="list-group-item border-0">{{ user_record.created_at }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">ID</li>
+      <li class="list-group-item border-0">{{ user_record.id }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">Email</li>
+      <li class="list-group-item border-0">{{ user_record.email }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">Phone</li>
+      <li class="list-group-item border-0">{{ user_record.phone}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">Address</li>
+      <li class="list-group-item border-0">{{ user_record.address}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">City</li>
+      <li class="list-group-item border-0">{{ user_record.city }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">Province</li>
+      <li class="list-group-item border-0">{{ user_record.province}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal-xl .flex-fill">
+      <li class="list-group-item border-1">ZipCode</li>
+      <li class="list-group-item border-0">{{ user_record.zipcode}}</li>
+    </ul>
+  </div>
+
+  <br />
+  <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+  <a href="{% url 'delete_record' user_record.id %}" class="btn btn-danger"
+    >Delete</a
+  >
+  <a href="{% url 'update_record'  user_record.id %}" class="btn btn-secondary"
+    >Update</a
+  >
+</div>
+
+{% endblock %}
